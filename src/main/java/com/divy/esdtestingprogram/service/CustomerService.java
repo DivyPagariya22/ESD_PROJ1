@@ -25,6 +25,8 @@ public class CustomerService {
         Customer customer = customerMapper.toCustomer(request);
 
         // Save encoded Password
+
+
         customer.setPassword(encryptionService.encode(customer.getPassword()));
 
         customerRepo.save(customer);
