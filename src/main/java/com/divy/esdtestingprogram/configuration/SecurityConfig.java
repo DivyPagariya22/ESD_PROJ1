@@ -1,6 +1,5 @@
 package com.divy.esdtestingprogram.configuration;
 
-import com.divy.esdtestingprogram.helper.RequestInterceptor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,17 +11,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig  implements WebMvcConfigurer {
-    private final RequestInterceptor requestInterceptor;
+//    private final RequestInterceptor requestInterceptor;
 
 
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        // Apply the interceptor to all endpoints except /auth/login
-        registry.addInterceptor(requestInterceptor)
-                .addPathPatterns("/**")
-                .excludePathPatterns("/api/v1/auth/**", "/api/v1/customers");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        // Apply the interceptor to all endpoints except /auth/login
+//        registry.addInterceptor(requestInterceptor)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/api/v1/auth/**", "/api/v1/customers");
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
